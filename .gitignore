@@ -3,3 +3,4 @@ skript/
 *.aux
 *.log
 *.pdf
+*.synctex.gz
