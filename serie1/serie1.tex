@@ -82,7 +82,7 @@ size(J(\varphi_0,....,\varphi_{n-1})) &= 1 + size(\varphi_0) + ... + size(\varph
 
 \section*{Kap. Syntax, unten, 2}
 \subsection*{Aufgabenstellung}
-Definieren Sie die Funktion conns: $ F_{AL} \rightarrow \{ \neg ,\wedge ,\vee ,\rightarrow,\leftrightarrow ,\nleftrightarrow ,\uparrow \} $, die jeder aussagenlogischen Formel die Menge der in ihr vorkommenden Junktoren zuordnet.
+Definieren Sie die Funktion conns: $F_{AL} \rightarrow \mathcal{P}(\{ \neg ,\wedge ,\vee ,\rightarrow,\leftrightarrow ,\nleftrightarrow ,\uparrow \})$, die jeder aussagenlogischen Formel die Menge der in ihr vorkommenden Junktoren zuordnet.
 \subsection*{Lösung}
 \subsubsection*{Basiszuordnung}
 conns($\{ \top \}$) = \{\}\\
@@ -106,4 +106,27 @@ Ja. Wenn man einen Junktor J hätte und diesen so definiert, dass f.a. $X_i, i \
 X_0 J X_1 J X_2 = ((X_0 J X_1) J X_2)
 \end{equation}
 In diesem Fall eine unendlichstellige Variante dieses Junktors in eine 2 stellige Variante überführen, die dann einen unendlichen Teilbaum hat. Da diese nicht ausgeschlossen sind sollte es keine Probleme geben.
+
+\section*{Kap. Semantik, 1}
+\subsection*{Aufgabenstellung}
+Werten Sie die Formel $X_0 \wedge X_1 \leftrightarrow (\neg X_0 \vee X_1)$ schrittweise unter einer Belegung $\beta$, für die $\beta(X_0)=0$ und $\beta(X_1)=1$ gilt, aus. Zeichnen Sie das zugehörige Diagramm.
+\subsection*{Lösung}
+\begin{equation}
+\begin{split}
+&X_0 \wedge X_1 \leftrightarrow ( \neg X_0 \vee X_1)\\
+&0 \wedge 1 \leftrightarrow (\neg 0 \vee 1)\\
+&0 \leftrightarrow (\neg 0 \vee 1)\\
+&0 \leftrightarrow (1 \vee 1)\\
+&0 \leftrightarrow 1\\
+&0
+\end{split}
+\end{equation}
+Das dazugehörige Baumdiagramm sieht so aus:
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=0.9\textwidth]{a1-sem}
+		\caption{Baumdiagramm} 
+		\label{Baumdiagramm}
+\end{figure}
+
 \end{document}
