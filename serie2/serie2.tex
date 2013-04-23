@@ -7,7 +7,6 @@
 \usepackage{ textcomp }
 \usepackage{ mathrsfs }
 \usepackage{ dsfont }
-
 \pagestyle{fancy}
 
 \usepackage{amsmath}
@@ -41,7 +40,7 @@ Welche der Formeln sind äquivalent?\\
 $X_0 \vee \neg X_1, \neg(X_1 \vee \neg X_0), X_1 \rightarrow X_0, X_0 \uparrow X_1, \neg X_0 \leftrightarrow X_1$\\
 
 \subsection*{Antwort}
-Da zwei Formeln äquivalent sind wenn sie bei jeder Variablenbelegung den selben Wahrheitswert ergeben. Wie im folgenden zu sehen ist, ist die nirgends wer Fall. 
+Da zwei Formeln äquivalent sind wenn sie bei jeder Variablenbelegung den selben Wahrheitswert ergeben. Wie im folgenden zu sehen ist, ist die nirgends wer Fall.
 \begin{equation}
 \textlbrackdbl \phi \textrbrackdbl_{\alpha} = \textlbrackdbl \vartheta \textrbrackdbl_{\alpha}
 \end{equation}\\
@@ -104,7 +103,7 @@ gilt.
 \subsection*{Antwort}
 \begin{equation}
 \begin{split}
-\neg((X_0 \rightarrow X_2) \rightarrow X_3) \wedge X_4 
+\neg((X_0 \rightarrow X_2) \rightarrow X_3) \wedge X_4
 \equiv&^1 \neg(\neg(X_0 \rightarrow X_2) \vee X_3) \wedge X_4\\
 \equiv&^2 (\neg\neg(X_0 \rightarrow X_2) \wedge \neg X_3) \wedge X_4\\
 \equiv&^3 ((X_0 \rightarrow X_2) \wedge \neg X_3) \wedge X_4\\
@@ -132,4 +131,53 @@ $\vartheta$ & $\neg \vartheta$ & $\neg(\neg \vartheta)$\\ \hline
 1 & 0 & 1\\
 \hline
 \end{tabular}
+
+\section*{SUBAL.1}
+\subsection*{Frage}
+Wenden Sie die Substitution\\
+$[X_{1} \longmapsto \neg (X_{2} \vee X_{3}), X_{3} \longmapsto X_{1}]$ auf die Formel
+$ X_{0} \leftrightarrow (\neg X_{1} \uparrow (X_{2} \rightarrow \neg (X_{2} \nleftrightarrow X_{3})))$ an.\\
+\subsection*{Antwort}
+$\sigma = [X_{1} \longmapsto \neg (X_{2} \vee X_{3}), X_{3} \longmapsto X_{1}]$
+\begin{equation}
+\begin{split}
+(X_{0} \leftrightarrow (\neg X_{1} \uparrow (X_{2} \rightarrow \neg (X_{2} \nleftrightarrow X_{3}))))\sigma 
+\equiv&^1 (X_{0})\sigma \leftrightarrow (\neg X_{1} \uparrow (X_{2} \rightarrow \neg (X_{2} \nleftrightarrow X_{3})))\sigma\\ 
+\equiv&^2 X_{0} \leftrightarrow ((\neg X_{1})\sigma \uparrow (X_{2} \rightarrow \neg (X_{2} \nleftrightarrow X_{3}))\sigma)\\
+\equiv&^3 X_{0} \leftrightarrow (\neg(X_{1}\sigma) \uparrow (X_{2}\sigma \rightarrow (\neg (X_{2} \nleftrightarrow X_{3}))\sigma))\\
+\equiv&^4 X_{0} \leftrightarrow (\neg \sigma(X_{1}) \uparrow (X_{2} \rightarrow \neg ((X_{2} \nleftrightarrow X_{3})\sigma)))\\
+\equiv&^5 X_{0} \leftrightarrow (\neg (\neg (X_{2} \vee X_{3})) \uparrow (X_{2} \rightarrow \neg ((X_{2}\sigma \nleftrightarrow X_{3}\sigma))))\\
+\equiv&^6 X_{0} \leftrightarrow ((X_{2} \vee X_{3}) \uparrow (X_{2} \rightarrow \neg ((X_{2}\sigma \nleftrightarrow X_{3}\sigma))))\\
+\equiv&^7 X_{0} \leftrightarrow ((X_{2} \vee X_{3}) \uparrow (X_{2} \rightarrow \neg (X_{2} \nleftrightarrow \sigma(X_{3}))))\\
+\equiv&^8 X_{0} \leftrightarrow ((X_{2} \vee X_{3}) \uparrow (X_{2} \rightarrow \neg (X_{2} \nleftrightarrow X_1)))\\
+\end{split}
+\end{equation}
+
+\section*{MAE.1}
+\subsection*{Frage}
+Stellen Sie die Zweifärbbarkeitsformel zum Haus des Nikolaus und die Drei- sowie Vierfärbbarkeitsformeln zu einem Dreieck auf.
+\subsection*{Antwort}
+Vierfärbbarkeit:\\
+\\
+\\ %Hier nochmal reinzeichnen
+\\
+$ ((X_0 \nleftrightarrow X_2) \vee (X_1 \nleftrightarrow X_3)) \wedge ((X_2 \nleftrightarrow X_4) \vee (X_3 \nleftrightarrow X_5)) \wedge ((X_4 \nleftrightarrow X_0) \vee (X_5 \nleftrightarrow X_1))$\\
+oder allgemein Formuliert\\
+$\bigwedge_{i<3} ((X_{2i} \nleftrightarrow X_{2(i+1) mod 6}) \vee (X_{(2i)+1} \nleftrightarrow X_{2(i+1)+1 mod 6}))$\\
+\\
+Dreifärbbarkeit:\\
+\\
+\\ % Hier nochmal reinzeichnen
+\\
+$ ((X_0 \nleftrightarrow X_2) \vee (X_1 \nleftrightarrow X_3)) \wedge ((X_2 \nleftrightarrow X_4) \vee (X_3 \nleftrightarrow X_5)) \wedge ((X_4 \nleftrightarrow X_0) \vee (X_5 \nleftrightarrow X_1)) \wedge (X_0 \uparrow X_1) \wedge (X_2 \uparrow X_3) \wedge (X_4 \uparrow X_5)$\\
+oder allgemein Formuliert\\
+$\bigwedge_{i<3} /((X_{2i} \nleftrightarrow X_{2(i+1) mod 6}) \vee (X_{(2i)+1} \nleftrightarrow X_{2(i+1)+1 mod 6})) \wedge (X_{2i} \uparrow X_{2i+1}) )$\\
+\\
+Haus des Nikolaus:\\
+\\
+\\ % Hier nochmal reinzeichnen
+\\
+$(X_0 \nleftrightarrow X_1) \vee (X_1 \nleftrightarrow X_2) \vee (X_2 \nleftrightarrow X_3) \vee (X_4 \nleftrightarrow X_0) \vee (X_0 \nleftrightarrow X_2) \vee (X_1 \nleftrightarrow X_4)$\\
+oder allgemeiner Formuliert\\
+$(\bigwedge_{i<5} (X_i \nleftrightarrow X_{i+1})) \wedge (X_0 \nleftrightarrow X_2) \wedge(X_1 \nleftrightarrow X_4)$
 \end{document}
