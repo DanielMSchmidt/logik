@@ -95,4 +95,41 @@ $X_1$ & $X_0$ & $\neg X_0$ & $\neg X_0 \leftrightarrow X_1$\\ \hline
 1 & 1 & 0 & 0\\
 \hline
 \end{tabular}
+
+\section*{AEUM.1}
+\subsection*{Frage}
+Zeigen Sie durch eine reine syntaktische Argumentation, dass\\
+$\neg ((X_0 \rightarrow X_2) \rightarrow X_3) \wedge X_4 \equiv (X_4 \wedge \neg X_3) \wedge (X_0 \rightarrow X_2)$\\
+gilt.
+\subsection*{Antwort}
+\begin{equation}
+\begin{split}
+\neg((X_0 \rightarrow X_2) \rightarrow X_3) \wedge X_4 
+\equiv&^1 \neg(\neg(X_0 \rightarrow X_2) \vee X_3) \wedge X_4\\
+\equiv&^2 (\neg\neg(X_0 \rightarrow X_2) \wedge \neg X_3) \wedge X_4\\
+\equiv&^3 ((X_0 \rightarrow X_2) \wedge \neg X_3) \wedge X_4\\
+\equiv&^4 X_0 \rightarrow X_2 \wedge \neg X_3 \wedge X_4\\
+\equiv&^5 (\neg X_3 \wedge X_4) \wedge (X_0 \rightarrow X_2)
+\end{split}
+\end{equation}
+
+\begin{enumerate}
+\item Elimination von Konditional
+\item De Morgan
+\item Doppelte Negation
+\item Überflüssige Klammern weggelassen
+\item Kommutativität
+\end{enumerate}
+
+\section*{AGAL.1}
+\subsection*{Frage}
+Beweisen Sie eines der obigen Gesetze. Führen Sie im Falle des letzten Gesetzes einen Beweis per vollständiger Induktion. Wir beweisen im folgenden die doppelte Negation.
+\subsection*{Antwort}
+\begin{tabular}{|l|l|l|}
+\hline
+$\vartheta$ & $\neg \vartheta$ & $\neg(\neg \vartheta)$\\ \hline
+0 & 1 & 0\\
+1 & 0 & 1\\
+\hline
+\end{tabular}
 \end{document}
