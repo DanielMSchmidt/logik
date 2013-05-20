@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{url,graphicx,tabularx,array,geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{paralist}
+\usepackage{latexsym}
+\usepackage{fancyhdr}
+\usepackage{ textcomp }
+\usepackage{ mathrsfs }
+\usepackage{ dsfont }
+\pagestyle{fancy}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+
+\setlength{\parskip}{1ex} %--skip lines between paragraphs
+\setlength{\parindent}{0pt} %--don't indent paragraphs
+
+%-- Commands for header
+\newcommand{\bs}{\ensuremath{\backslash}}
+\renewcommand{\title}[1]{\textbf{#1}\\}
+\renewcommand{\line}{\begin{tabularx}{\textwidth}{X>{\raggedleft}X}\hline\\\end{tabularx}\\[-0.5cm]}
+\newcommand{\leftright}[2]{\begin{tabularx}{\textwidth}{X>{\raggedleft}X}#1%
+& #2\\\end{tabularx}\\[-0.5cm]}
+%\linespread{2} %-- Uncomment for Double Space
+\begin{document}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[L]{
+\leftright{\textbf{Logik}}{Hannes Strubel, Daniel Schmidt}
+\line
+\leftright{\textbf{Gruppe: Mo, 8:15 - 9:45}}{Serie 3}
+}
+\fancyfoot[C]{\thepage}
+
+\section*{KOMAL.1}
+Für jedes Lineare Gleichungssystem mit $n \in \mathbb{N} \textnormal{ und } \varphi, \varepsilon \in F_{AL}$ der Form
+\begin{equation}
+\varphi_n = \varepsilon_n
+\end{equation}
+gilt, sie ist erfüllbar, falls gilt:
+\begin{equation}
+erfb(\bigwedge_{n \in \mathbb{N}}(\varphi_n = \varepsilon_n))
+\end{equation}
+Nach dem Kompaktheitssatz gilt auch:
+\begin{equation}
+erfb(\bigwedge_{n \in \mathbb{N}}(\varphi_n = \varepsilon_n)) \Longleftrightarrow \bigwedge_{n \in \mathbb{N}}erfb(\varphi_n = \varepsilon_n))
+\end{equation}
+\end{document}
